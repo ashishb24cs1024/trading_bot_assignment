@@ -1,17 +1,15 @@
-Binance Futures Testnet Trading Bot
-📌 Overview
+## Binance Futures Testnet Trading Bot
+📖 Description
 
-This project is a modular, CLI-based trading application built in Python that interacts with the Binance Futures Testnet (USDT-M).
+A modular, command-line based trading bot built in Python that integrates with the Binance Futures Testnet (USDT-M).
 
-It enables users to place Market, Limit, and Stop-Limit orders with proper input validation, structured logging, and robust error handling.
+The application supports Market, Limit, and Stop-Limit orders with proper input validation, structured logging, and robust exception handling. The architecture follows separation of concerns to ensure readability, maintainability, and reliability.
 
-The project emphasizes clean architecture, separation of concerns, and production-level reliability practices.
+## ✨ Features
 
-🚀 Features
+Support for BUY and SELL order sides
 
-✅ Supports BUY and SELL sides
-
-✅ Order types:
+Order types supported:
 
 MARKET
 
@@ -19,77 +17,73 @@ LIMIT
 
 STOP_LIMIT (Stop-Limit)
 
-✅ Command-line interface using argparse
+CLI interface using argparse
 
-✅ Input validation before API execution
+Input validation before order execution
 
-✅ Structured logging of API requests and responses
+Structured logging of API requests and responses
 
-✅ Exception handling for API and runtime errors
+Exception handling for API and network failures
 
-✅ Modular and reusable code architecture
+Modular code organization
 
-🏗 Project Structure
+## 🏗 Project Structure
 binance-futures-trading-bot/
 │
 ├── bot/
-│   ├── client.py          # Binance client wrapper
-│   ├── orders.py          # Order execution logic
-│   ├── validators.py      # Input validation
-│   ├── logging_config.py  # Logging configuration
+│   ├── client.py
+│   ├── orders.py
+│   ├── validators.py
+│   ├── logging_config.py
 │
-├── cli.py                 # CLI entry point
+├── cli.py
 ├── requirements.txt
 ├── README.md
-⚙️ Setup Instructions
-1️⃣ Clone the Repository
+⚙️ Installation
+1️⃣ Clone the repository
 git clone <your-repository-url>
 cd binance-futures-trading-bot
-2️⃣ (Optional) Create Virtual Environment
-python -m venv venv
-source venv/bin/activate      # macOS/Linux
-venv\Scripts\activate         # Windows
-3️⃣ Install Dependencies
-pip install -r requirements.txt
-4️⃣ Configure Environment Variables
+2️⃣ Create virtual environment (optional but recommended)
 
-Create a .env file in the project root:
+macOS / Linux
+
+python -m venv venv
+source venv/bin/activate
+
+Windows
+
+python -m venv venv
+venv\Scripts\activate
+3️⃣ Install dependencies
+pip install -r requirements.txt
+🔐 Environment Configuration
+
+Create a .env file in the root directory:
 
 API_KEY=your_api_key
 API_SECRET=your_api_secret
-▶️ Usage Examples
-🔹 Market Order
-python cli.py --symbol BTCUSDT --side BUY --type MARKET --quantity 0.001
-🔹 Limit Order
-python cli.py --symbol BTCUSDT --side SELL --type LIMIT --quantity 0.001 --price 60000
-🔹 Stop-Limit Order
-python cli.py --symbol BTCUSDT --side BUY --type STOP_LIMIT --quantity 0.001 --price 59000 --stop-price 59500
-📝 Logging
 
-All API interactions, request summaries, responses, and errors are logged in:
+Ensure your Binance Futures Testnet account is active and funded with testnet balance.
+
+## ▶️ Usage
+Market Order
+python cli.py --symbol BTCUSDT --side BUY --type MARKET --quantity 0.001
+Limit Order
+python cli.py --symbol BTCUSDT --side SELL --type LIMIT --quantity 0.001 --price 60000
+Stop-Limit Order
+python cli.py --symbol BTCUSDT --side BUY --type STOP_LIMIT --quantity 0.001 --price 59000 --stop-price 59500
+## 📝 Logging
+
+All API interactions, including request details, responses, and error messages, are logged to:
 
 trading_bot.log
 
-Logging is implemented to improve traceability, debugging, and reliability.
+This ensures traceability and easier debugging.
 
-🔐 Assumptions
+## 🛡 Assumptions
 
 Binance Futures Testnet account is active
 
 Valid API credentials are provided
 
-Sufficient testnet balance is available for order execution
-
-📎 Notes
-
-This project was built as part of an internship technical assessment to demonstrate:
-
-Clean code structure
-
-API integration
-
-Input validation
-
-Logging and reliability handling
-
-Practical understanding of trading order types
+Sufficient testnet balance is available
